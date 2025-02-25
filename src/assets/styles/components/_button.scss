@@ -1,0 +1,53 @@
+.custom-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 100px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  border: none;
+  &__register {
+    background-color: #e77e23;
+    color: white;
+    width: auto !important; // use this important to override the global button styles
+    padding: 0.5rem 1rem !important;
+    &:hover:not(:disabled) {
+      background-color: darken(#e77e23, 10%);
+    }
+  }
+  &__primary {
+    background-color: #e77e23;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: darken(#e77e23, 10%);
+    }
+  }
+
+  &__secondary {
+    background-color: #f8f9fa;
+    color: #e77e23;
+    border: 1px solid #e77e23;
+
+    &:hover:not(:disabled) {
+      background-color: #e77e23;
+      color: white;
+    }
+  }
+
+  &__outline {
+    background-color: transparent;
+    color: #e77e23;
+    border: 2px solid #e77e23;
+
+    &:hover:not(:disabled) {
+      background-color: #e77e23;
+      color: white;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

@@ -1,0 +1,157 @@
+.pizza-card {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 1rem;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked + .pizza-card__content {
+      background-color: #e77e23;
+    }
+
+    // Change the title and price color when checked
+    &:checked + .pizza-card__content {
+      background-color: #e77e23;
+      .pizza-card__title,
+      .pizza-card__price {
+        color: white;
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 1.2rem;
+    padding: 0.75rem;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background-color: white;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      .pizza-card__image {
+        transform: rotate(15deg);
+      }
+    }
+  }
+
+  &__image-container {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  &__info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    font-size: 0.9rem;
+    text-align: left;
+    font-weight: bold;
+    margin: 0 0 0.25rem 0;
+    color: #333;
+  }
+
+  &__price {
+    text-align: left;
+    font-size: 0.8rem;
+    color: #e77e23;
+    margin: 0;
+  }
+}
+.pizza-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  &__subtitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+}
+.pizza-size {
+  display: flex;
+  gap: 1rem;
+  &__subtitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  &__title {
+    margin-top: 3px;
+    margin-left: 5px;
+  }
+  &__pricing {
+    color: gray;
+  }
+}
+.pizza-topping {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  &__title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+  }
+  &__subtitle {
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #333;
+  }
+
+  &__items {
+    display: grid;
+    gap: 0.5rem;
+    align-items: center; // Align items vertically in the center
+  }
+
+  &__item {
+    background-color: #f8f8f8;
+    border: 1.5px solid #e77e23;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #e77e23;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #e77e23;
+      color: white;
+    }
+  }
+
+  &__checkbox {
+    display: none; // Hide checkbox
+  }
+  // Alternative fix if using :has (Supported in modern browsers)
+  label:has(input[type="checkbox"]:checked) {
+    background-color: #e77e23;
+    color: white;
+  }
+}

@@ -1,0 +1,18 @@
+@import "variables";
+@import "mixins";
+@import "./components/navbar";
+@import "./pizza";
+@import "./order";
+@import "./components/button";
+@import "./components/footer";
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+.app {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}

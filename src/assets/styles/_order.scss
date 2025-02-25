@@ -1,0 +1,101 @@
+.order {
+  &__hero {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75vh;
+    background: url("/src/assets/img/hero.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1; // Push behind navbar
+  }
+
+  &__hero-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #e77e23;
+    padding: 0.5rem 1.5rem;
+    border-radius: 10px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr) repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+  }
+
+  &__left {
+    grid-column: span 9;
+    padding: 1.5rem;
+    overflow-y: auto;
+  }
+  &__right {
+    grid-column: span 3;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 12px;
+
+    text-align: left;
+    font-weight: 100;
+    font-size: large;
+    color: #e77e23;
+  }
+
+  &__subtitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  &__summary {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    &-item {
+      display: flex;
+      margin-top: 20px;
+      justify-content: space-between;
+      align-items: center;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    &-name {
+      color: #333;
+      font-size: 15px;
+    }
+    &-empty {
+      color: #333;
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    &-price {
+      color: #666;
+      font-size: 15px;
+      font-weight: 100;
+    }
+
+    &-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+      font-weight: bold;
+      color: #333;
+    }
+  }
+}

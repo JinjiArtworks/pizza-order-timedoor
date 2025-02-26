@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { ref, onMounted } from "vue";
 
-export const useSizeStore = defineStore("sizeStore", () => {
+export const useSizeStore = defineStore("SizeStore", () => {
     const sizes = ref([]);
     const selectedSizes = ref([])
     const fetchPizzas = async () => {
@@ -18,7 +18,11 @@ export const useSizeStore = defineStore("sizeStore", () => {
     const selectSize = (size) => {
         selectedSizes.value = [size]; // store the size pizza here
     };
+    // Function to reset selected sizes properly
+    const clearSelectedSizes = () => {
+        selectedSizes.value = []; // ✅ Correctly resets the array reactively
+    };
     onMounted(fetchPizzas);
 
-    return { sizes, selectedSizes, selectSize };
+    return { sizes, selectedSizes, clearSelectedSizes, selectSize };
 });

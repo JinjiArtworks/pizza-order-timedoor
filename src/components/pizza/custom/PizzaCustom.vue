@@ -16,8 +16,8 @@
 <script setup>
 import PizzaSize from "./PizzaSize.vue";
 import PizzaTopping from "./PizzaTopping.vue";
-import { useSizeStore } from "../../../store/sizeStore.js";
-import { useToppingStore } from "../../../store/toppingStore.js";
+import { useSizeStore } from "../../../store/SizeStore.js";
+import { useToppingStore } from "../../../store/ToppingStore.js";
 import { storeToRefs } from "pinia";
 
 const pizzaSize = useSizeStore();

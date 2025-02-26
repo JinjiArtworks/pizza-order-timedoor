@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { ref, onMounted } from "vue";
 
-export const usePizzaList = defineStore("pizzaList", () => {
+export const usePizzaList = defineStore("PizzaList", () => {
   const pizzas = ref([]);
 
   const fetchPizzas = async () => {

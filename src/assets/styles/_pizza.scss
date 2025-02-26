@@ -13,11 +13,6 @@
 
     &:checked + .pizza-card__content {
       background-color: #e77e23;
-    }
-
-    // Change the title and price color when checked
-    &:checked + .pizza-card__content {
-      background-color: #e77e23;
       .pizza-card__title,
       .pizza-card__price {
         color: white;
@@ -34,7 +29,9 @@
     border-radius: 12px;
     background-color: white;
     transition: all 0.3s ease;
-
+    position: relative;
+    overflow: hidden; // Hide anything outside
+    z-index: 2; // Ensure content is above the badge
     &:hover {
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       .pizza-card__image {
@@ -43,11 +40,17 @@
     }
   }
 
-  &__image-container {
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    border-radius: 8px;
+  &__badge {
+    position: absolute;
+    top: 10px;
+    right: -40px; // Move it slightly outside the card
+    background: black;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 6px 50px; // Extend the length
+    z-index: 1; // Lower than content but visible
+    transform: rotate(40deg);
   }
 
   &__image {
@@ -75,8 +78,15 @@
   &__price {
     text-align: left;
     font-size: 0.8rem;
-    color: #e77e23;
     margin: 0;
+
+  }
+
+  &__original-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-left: 5px;
+    font-size: 0.75rem;
   }
 }
 .pizza-list {

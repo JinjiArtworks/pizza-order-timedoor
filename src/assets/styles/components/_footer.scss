@@ -36,6 +36,9 @@
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
+    &-food{
+      font-size: 2rem;
+    }
   }
 
   &__nav {
@@ -57,7 +60,7 @@
 
   &__socials {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.3rem;
   }
 

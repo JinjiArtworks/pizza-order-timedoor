@@ -7,6 +7,11 @@
       class="pizza-card__input"
     />
     <div class="pizza-card__content">
+      <div v-if="pizza.discount?.is_active" class="pizza-card__badge">
+        OFFER
+      </div>
+      <!-- Discount Badge -->
+
       <div class="pizza-card__image-container">
         <img
           :src="getImageUrl(pizza.imageFile)"
@@ -16,7 +21,16 @@
       </div>
       <div class="pizza-card__info">
         <h3 class="pizza-card__title">{{ pizza.name }}</h3>
-        <p class="pizza-card__price">${{ pizza.price.toFixed(2) }}</p>
+        <p
+          v-if="pizza.discount?.is_active"
+          class="pizza-card__price pizza-card__price--discount"
+        >
+          ${{ pizza.discount.final_price.toFixed(2) }}
+          <span class="pizza-card__original-price">
+            ${{ pizza.price.toFixed(2) }}
+          </span>
+        </p>
+        <p v-else class="pizza-card__price">${{ pizza.price.toFixed(2) }}</p>
       </div>
     </div>
   </label>
